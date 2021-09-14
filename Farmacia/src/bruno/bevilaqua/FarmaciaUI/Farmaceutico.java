@@ -1,4 +1,4 @@
-package bruno.bevilaqua;
+package FarmaciaUI;
 
 import java.util.List;
 

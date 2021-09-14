@@ -1,4 +1,4 @@
-package bruno.bevilaqua;
+package FarmaciaUI;
 
 import java.io.File;
 import java.io.FileInputStream;

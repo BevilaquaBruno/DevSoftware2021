@@ -1,9 +1,8 @@
-package bruno.bevilaqua;
+package FarmaciaUI;
 
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -63,51 +62,6 @@ public class Principal {
 	/*
 	 * Cadastros
 	 * */
-	
-	private static void showCadastroProduto() throws FileNotFoundException, ClassNotFoundException, IOException {
-		System.out.println("________________________________________________");
-		System.out.println("|               Produto                        |");
-		System.out.println("|__Digite______________________________________|");
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Código Barra: ");
-		String codBarra = scan.nextLine();
-		System.out.print("Lote: ");
-		String lote = scan.nextLine();
-		System.out.println("Data Fabricação: ");
-		String data_fabricacao = scan.nextLine();
-		System.out.println("Data Validade: ");
-		String data_validade = scan.nextLine();
-		System.out.println("Valor: ");
-		Float valor = scan.nextFloat();
-		System.out.println("Idade Mínima: ");
-		Integer idadeMinima = scan.nextInt();
-		System.out.println("Idade Máxima: ");
-		Integer idadeMaxima = scan.nextInt();
-		System.out.println("Nome da Categoria do Produto: ");
-		String nomeCatProd = scan.nextLine();
-		System.out.println("Ícone da categoria do produto: ");
-		String iconeCatProd = scan.nextLine();
-	
-		Date dataFabricacao = new Date(Integer.parseInt(data_fabricacao.split("/")[2]),Integer.parseInt(data_fabricacao.split("/")[1]), Integer.parseInt(data_fabricacao.split("/")[0]));
-		Date dataValidade= new Date(Integer.parseInt(data_validade.split("/")[2]),Integer.parseInt(data_validade.split("/")[1]), Integer.parseInt(data_validade.split("/")[0]));
-		
-		CategoriaProduto catprod = new CategoriaProduto(nomeCatProd, iconeCatProd);
-		Produto produto = new Produto(codBarra, lote, dataFabricacao, dataValidade, valor, idadeMinima, idadeMaxima, catprod);
-		
-		System.out.println("Deseja salvar o produto? S - Sim | N - Não");
-		System.out.print("Resposta: ");
-		String opc = scan.next();
-		if(opc.equals("S")) {
-			produto.salvar(produto);
-		}
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		showCadastros();
-		scan.close();
-	}
 	
 	private static void showCadastroCategoriaProduto() throws FileNotFoundException, ClassNotFoundException, IOException {
 		System.out.println("________________________________________________");
@@ -252,7 +206,6 @@ public class Principal {
 		System.out.println("|3. Funcionario                                |");
 		System.out.println("|4. Farmaceutico                               |");
 		System.out.println("|5. Cat. Produto                               |");
-		System.out.println("|6. Produto                                    |");
 		System.out.print("Digite uma opção: ");
 		Scanner scan = new Scanner(System.in);
 		Integer opc = scan.nextInt();

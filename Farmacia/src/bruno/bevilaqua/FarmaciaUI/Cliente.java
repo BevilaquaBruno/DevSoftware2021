@@ -1,4 +1,4 @@
-package bruno.bevilaqua;
+package FarmaciaUI;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import bruno.bevilaqua.Funcionario;
+import farmacia.Funcionario;
 
 public class Cliente extends Pessoa implements Serializable{
 	public static Generico generico = new Generico();

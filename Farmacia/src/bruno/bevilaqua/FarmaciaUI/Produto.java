@@ -1,15 +1,12 @@
-package bruno.bevilaqua;
+package FarmaciaUI;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 public class Produto implements Serializable{
 	/**
 	 * 
 	 */
-	public static Generico generico = new Generico();
-	
 	private static final long serialVersionUID = 1L;
 	private String codBarra;
 	private String lote;
@@ -19,8 +16,6 @@ public class Produto implements Serializable{
 	private Integer idadeMinima;
 	private Integer idadeMaxima;
 	private CategoriaProduto categoriaProduto;
-	
-	public static String ARQUIVO_SERIALIZACAO = "C:/bruno/UNC/2_fase/desenvolvimento_software/unc_DevSoftware2021/farmacia/database/produto.obj";
 	
 	public Produto(String codBarra, String lote, Date dataFabricacao, Date dataValidade, Float valor, Integer idadeMinima, Integer idadeMaxima, CategoriaProduto categoriaproduto) {
 		this.setCodBarra(codBarra);
@@ -95,19 +90,6 @@ public class Produto implements Serializable{
 
 	public void setCategoriaProduto(CategoriaProduto categoriaProduto) {
 		this.categoriaProduto = categoriaProduto;
-	}
-	
-	/* Methods */
-	public static void salvar(Produto cl) {
-		generico.salvarEntidade(cl, Produto.ARQUIVO_SERIALIZACAO);
-	}
-	
-	public static List<Produto> lerTodos() throws ClassNotFoundException {
-		return generico.lerTodasEntidades(Produto.ARQUIVO_SERIALIZACAO);
-	}
-	
-	public static void showAll() {
-		generico.showLista(Produto.ARQUIVO_SERIALIZACAO);
 	}
 	
 	/* Overrides */
